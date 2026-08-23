@@ -1,0 +1,30 @@
+upstreams:
+  groups:
+    default:
+      - https://dns.google/dns-query
+      - https://cloudflare-dns.com/dns-query
+
+blocking:
+  blackLists:
+    ads:
+      # Standard Ad & Malware Blocking
+      - https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts
+    fakenews_and_scams:
+      # Blocks fake news, clickbait, and misinformation sites
+      - https://raw.githubusercontent.com/StevenBlack/hosts/master/alternates/fakenews/hosts
+    phishing:
+      # Blocks scams, phishing, and fake login pages
+      - https://phishing.army/download/phishing_army_blocklist_extended.txt
+    ai_spam:
+      # Blocks known AI content farms and low-quality SEO spam
+      - https://raw.githubusercontent.com/rimu/no-qanon/master/fake-news
+      
+  clientGroupsBlock:
+    default:
+      - ads
+      - fakenews_and_scams
+      - phishing
+      - ai_spam
+
+ports:
+  http: 4000
