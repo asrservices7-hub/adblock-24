@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: adblock-doh
+    env: docker
+    region: oregon
+    plan: free
+    # Render maps standard HTTP(S) ports to your app's internal port
+    envVars:
+      - key: PORT
+        value: 4000

@@ -1,0 +1,18 @@
+upstreams:
+  groups:
+    default:
+      - https://dns.google/dns-query
+      - https://cloudflare-dns.com/dns-query
+
+blocking:
+  blackLists:
+    ads:
+      - https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts
+  clientGroupsBlock:
+    default:
+      - ads
+
+ports:
+  # DoH will be served over HTTP on port 4000. 
+  # Render automatically proxies HTTPS (443) traffic to this port.
+  http: 4000
